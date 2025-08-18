@@ -7,6 +7,14 @@
 <!-- List stakeholders involved in the scenario -->
 
 # Overview of Database & Schema
+This database uses a **star schema** design, with central **fact tables** (`fact_visits`, `fact_ride_events`, `fact_purchases`) linked to **dimension tables** (`dim_guest`, `dim_ticket`, `dim_attraction`) via foreign keys.  
+
+**Benefits of this schema:**  
+- Simplifies analytics by separating **measures** (spend, revenue, wait times) from **descriptors** (guest details, ticket type, attraction info).  
+- Improves performance for queries and aggregations.  
+- Easy to extend by adding new dimensions.  
+- Business-friendly structure for answering questions such as revenue by ticket type, guest demographics, or attraction satisfaction.  
+
 
 ## Star Schema Explanation
 <!-- Very brief explanation in your own words -->
