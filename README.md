@@ -1,10 +1,20 @@
 # Theme_park_analytics by Thierno Barry
 
-# Business Problem
-<!-- 3–6 sentences describing the business problem -->
+## Business Problem
+Over the past two quarters, Supernova Theme Park has seen uneven guest satisfaction scores and fluctuating revenue. Guest experience data collected during the summer season reveals recurring issues: long and inconsistent wait times, ride availability challenges, and overcrowding during peak hours — all of which reduce guest satisfaction.
+
+At the same time, there are open questions around guest behavior: how frequently they visit, how recently, and what drives their in-park spending. The Park General Manager and the Marketing team need clear patterns to guide decisions — such as which ticket types, party sizes, purchase categories, ride times, or attraction states most strongly influence guest spending and satisfaction.
+
+Given all the issues listed above and stakeholders' preoccupation, the central question becomes:
+❓ How do operational efficiency and ticketing strategies work together to shape guest satisfaction, guest value, and ultimately park revenue?
 
 # Stakeholders
-<!-- List stakeholders involved in the scenario -->
+
+Primary Stakeholder:
+Park General Manager (GM)
+
+Supporting Stakeholders:
+Operations Director (staffing & queues), Marketing Director (promos & ticket mix)
 
 # Overview of Database & Schema
 This database uses a **star schema** design, with central **fact tables** (`fact_visits`, `fact_ride_events`, `fact_purchases`) linked to **dimension tables** (`dim_guest`, `dim_ticket`, `dim_attraction`) via foreign keys.  
