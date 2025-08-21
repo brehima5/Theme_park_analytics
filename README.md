@@ -29,19 +29,23 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 ### Tables Overview
 <img width="943" height="712" alt="Screenshot 2025-08-21 at 12 49 47 PM" src="https://github.com/user-attachments/assets/7d91ff07-d9b0-4007-8bc5-b9b3595f50d3" />
 
-# Exploratory Data Analysis (SQL)
+## Exploratory Data Analysis (SQL)
 
-## Key Explorations
+### Key Explorations
 1. distribution of the waiting minutes across ticket type – short description and why it was done **hypothesis, waiting time corelation ticket type, leading unsatisfaction**
 2. Daily visits and daily spending – short description and why it was done **overall performance for each day pointing Ops**
 3. EDA Guest_behaviour( spending by category or purchasea and by party size) – short description and why it was done  **helping marketing understanding guest spending for example to drive their decisions going forward**
 
 > SQL queries can be linked: [/sql/01_eda.sql](sql/01_eda.sql)
 
-# Feature Engineering (SQL)
+## Feature Engineering (SQL)
 
-## Created Features & Rationale
+### Created Features & Rationale
 <!-- List features created in SQL and short reasoning behind each -->
+1. **hours_stayed:** duration of the visit :long short or medium
+2. **wait_bins:** lenght of waiting minutes : long short medium
+3. **visit_segment:** based on the spending by visits : basic standard and premium
+4. **ride_frame:** based on the time of the ride: morning afternoon evening or night
 
 # CTEs & Window Functions (SQL)
 
