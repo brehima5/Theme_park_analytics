@@ -8,7 +8,7 @@ At the same time, there are open questions around guest behavior: how frequently
 Given all the issues listed above and stakeholders' preoccupation, the central question becomes:
 ❓ How do operational efficiency and ticketing strategies work together to shape guest satisfaction, guest value, and ultimately park revenue?
 
-# Stakeholders
+## Stakeholders
 
 Primary Stakeholder:
 Park General Manager (GM)
@@ -16,7 +16,8 @@ Park General Manager (GM)
 Supporting Stakeholders:
 Operations Director (staffing & queues), Marketing Director (promos & ticket mix)
 
-# Overview of Database & Schema
+## Overview of Database & Schema 
+### Star Schema Explanation
 This database uses a **star schema** design, with central **fact tables** (`fact_visits`, `fact_ride_events`, `fact_purchases`) linked to **dimension tables** (`dim_guest`, `dim_ticket`, `dim_attraction`) via foreign keys.  
 
 **Benefits of this schema:**  
@@ -25,19 +26,15 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 - Easy to extend by adding new dimensions.  
 - Business-friendly structure for answering questions such as revenue by ticket type, guest demographics, or attraction satisfaction.  
 
-
-## Star Schema Explanation
-<!-- Very brief explanation in your own words -->
-
-# Tables Overview
-<!-- List of tables and a brief overview of the information in each table -->
+### Tables Overview
+<img width="943" height="712" alt="Screenshot 2025-08-21 at 12 49 47 PM" src="https://github.com/user-attachments/assets/7d91ff07-d9b0-4007-8bc5-b9b3595f50d3" />
 
 # Exploratory Data Analysis (SQL)
 
 ## Key Explorations
-1. Exploration 1 – short description and why it was done  
-2. Exploration 2 – short description and why it was done  
-3. Exploration 3 – short description and why it was done  
+1. distribution of the waiting minutes across ticket type – short description and why it was done **hypothesis, waiting time corelation ticket type, leading unsatisfaction**
+2. Daily visits and daily spending – short description and why it was done **overall performance for each day pointing Ops**
+3. EDA Guest_behaviour( spending by category or purchasea and by party size) – short description and why it was done  **helping marketing understanding guest spending for example to drive their decisions going forward**
 
 > SQL queries can be linked: [/sql/01_eda.sql](sql/01_eda.sql)
 
