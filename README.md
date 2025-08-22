@@ -51,12 +51,16 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 
 ## CTEs & Window Functions (SQL)
 
-### Key Queries & Snippets
+### Sample Querie & Snippets
 <!-- Include short snippets of key CTE or window function queries -->
-> Full queries: [/sql/02_cte_window.sql](sql/02_cte_window.sql)
-<img width="878" height="193" alt="Screenshot 2025-08-22 at 11 08 34 AM" src="https://github.com/user-attachments/assets/fc7449aa-a9f6-4962-9eea-617f9881e951" />
-<img width="963" height="72" alt="Screenshot 2025-08-22 at 10 58 56 AM" src="https://github.com/user-attachments/assets/0f38ccab-b645-494d-be07-383760c6ade8" />
+**CTE RFM**\
+<img width="878" height="193" alt="Screenshot 2025-08-22 at 11 08 34 AM" src="https://github.com/user-attachments/assets/fc7449aa-a9f6-4962-9eea-617f9881e951" />\
 
+**Windows functions RANK AND SUM**\
+<img width="963" height="72" alt="Screenshot 2025-08-22 at 10 58 56 AM" src="https://github.com/user-attachments/assets/0f38ccab-b645-494d-be07-383760c6ade8" />\
+
+
+> Full queries: [/sql/02_cte_window.sql](sql/02_cte_window.sql)
 
 
 # Visuals (Python)
