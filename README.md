@@ -115,9 +115,16 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 - Only 1 of top 3 high-value guests opted into marketing. Reassess marketing strategy, to reach high spending not_opt_in guests.
 - Focus on California and New york as high revenues states and explore marketing strategies to increase spend or visits from lower-revenue states (TX, FL).
 - Tailor campaigns to guest segments: stable, volatile, and low-value spenders.
-# Ethics & Bias
+  
+### Ethics & Bias
 <!-- Data quality, missing values, duplicates, margin not modeled, time window, etc. -->
-
+The initial database had several issues that we handled and clean to make it ready and efficient for analysis.
+- recurent inconsistent strings encountered in several columns from multiple tables: We used Trim, lower, upper, replace to handle those
+- Duplicates values: 16 found in fact ride events, that we deleted to conserve only one
+- Conversion of the spending or purchases columns from cents to dollars
+- Missing values:Imputation used to fill in nulls in some columns
+  1. amount column in fact_purchase using the average amount per category. see sql\02_cleaning
+  2. spending column in fact_visits using the average spend per visit per day
 # Repo Navigation
 
 ## /sql
