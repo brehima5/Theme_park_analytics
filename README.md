@@ -36,7 +36,7 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 2. **Daily visits and daily spending** Daily performance is an excellent metric that provides a clear view of how well the business is doing. Exploring both daily visits and daily spending help patterns help uncover revenue fluctuations and guest engagement.This analysis not only reveals performance trends but also highlights underperforming days Allowing you to help operationnal team optimize staffing, ressource allocation and better service delivery.
 3. **EDA Guest_behaviour( spending by category or purchasea and by party size):** This analysis takes a marketing-oriented perspective. Guest spending behavior is influenced by multiple factors, such as party size, purchase categories, and ticket types. Understanding these dynamics helps uncover which groups of guests spend more, what they purchase, and under what circumstances. These insights are useful for designing targeted marketing campaigns. This initial exploration is a necessary first step before diving into more advanced behavioral analysis.
 
-> SQL queries can be linked: [/sql/01_eda.sql](sql/01_eda.sql)
+> SQL queries can be linked: [/sql/01_eda.sql](Sql-files/sql:01_eda.sql)
 
 ## Feature Engineering (SQL)
 
