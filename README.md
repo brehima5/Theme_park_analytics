@@ -60,7 +60,7 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 <img width="963" height="72" alt="Screenshot 2025-08-22 at 10 58 56 AM" src="https://github.com/user-attachments/assets/0f38ccab-b645-494d-be07-383760c6ade8" />\
 
 
-> Full queries: [/sql/02_cte_window.sql](sql/02_cte_window.sql)
+> Full queries: [/sql/02_cte_window.sql](Sql-files/sql:04_ctes_windows.sql)
 
 
 # Visuals (Python)
