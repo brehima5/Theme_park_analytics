@@ -32,26 +32,32 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 ## Exploratory Data Analysis (SQL)
 
 ### Key Explorations
-1. distribution of the waiting minutes across ticket type – short description and why it was done **hypothesis, waiting time corelation ticket type, leading unsatisfaction**
-2. Daily visits and daily spending – short description and why it was done **overall performance for each day pointing Ops**
-3. EDA Guest_behaviour( spending by category or purchasea and by party size) – short description and why it was done  **helping marketing understanding guest spending for example to drive their decisions going forward**
+1. **distribution of the waiting minutes across ticket type:** The main idea is to uncover potential factors that lead to guest dissatisfaction. Delay in services or waiting time is  frustrating, By analyzing how waiting times vary across different ticket types, we can identify patterns that highlight where frustrations are most concentrated. This exploration helps guide further investigation and points to opportunities for operational improvements.
+2. **Daily visits and daily spending** Daily performance is an excellent metric that provides a clear view of how well the business is doing. Exploring both daily visits and daily spending help patterns help uncover revenue fluctuations and guest engagement.This analysis not only reveals performance trends but also highlights underperforming days Allowing you to help operationnal team optimize staffing, ressource allocation and better service delivery.
+3. **EDA Guest_behaviour( spending by category or purchasea and by party size):** This analysis takes a marketing-oriented perspective. Guest spending behavior is influenced by multiple factors, such as party size, purchase categories, and ticket types. Understanding these dynamics helps uncover which groups of guests spend more, what they purchase, and under what circumstances. These insights are useful for designing targeted marketing campaigns. This initial exploration is a necessary first step before diving into more advanced behavioral analysis.
 
 > SQL queries can be linked: [/sql/01_eda.sql](sql/01_eda.sql)
 
 ## Feature Engineering (SQL)
 
 ### Created Features & Rationale
-<!-- List features created in SQL and short reasoning behind each -->
-1. **hours_stayed:** duration of the visit :long short or medium
-2. **wait_bins:** lenght of waiting minutes : long short medium
-3. **visit_segment:** based on the spending by visits : basic standard and premium
-4. **ride_frame:** based on the time of the ride: morning afternoon evening or night
+1. **hours_stayed (duration of the visit: short, medium, long):** Visit duration is a strong indicator of guest engagement. Longer stays may correlate with higher spending or satisfaction, while shorter visits could signal maybe that guests' expectations are not met or they have time constraints.
 
-# CTEs & Window Functions (SQL)
+2. **wait_bins (length of waiting minutes: short, medium, long):** Waiting time directly impacts guest experience. Categorizing it helps identify which groups of visitors are most affected by delays and whether long waits are tied to dissatisfaction or reduced spending.
 
-## Key Queries & Snippets
+3. **visit_segment (based on spending: basic, standard, premium):** Segmenting visits by revenue they generated  allows the business to distinguish between low to high value experiences. help to uncover what types of visits contribute mostly to the revenue and in which conditions those visits occured (party_size, wait_time, guests, date or time of day)
+
+4. **ride_frame (time of the ride: morning, afternoon, evening, night):** Time of day influences guest behavior and operational needs. Analyzing rides across time frames reveals peak periods, demand patterns, and opportunities for scheduling staff or offering targeted promotions.
+
+## CTEs & Window Functions (SQL)
+
+### Key Queries & Snippets
 <!-- Include short snippets of key CTE or window function queries -->
 > Full queries: [/sql/02_cte_window.sql](sql/02_cte_window.sql)
+<img width="878" height="193" alt="Screenshot 2025-08-22 at 11 08 34 AM" src="https://github.com/user-attachments/assets/fc7449aa-a9f6-4962-9eea-617f9881e951" />
+<img width="963" height="72" alt="Screenshot 2025-08-22 at 10 58 56 AM" src="https://github.com/user-attachments/assets/0f38ccab-b645-494d-be07-383760c6ade8" />
+
+
 
 # Visuals (Python)
 
