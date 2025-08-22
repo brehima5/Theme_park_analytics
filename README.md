@@ -63,21 +63,33 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 > Full queries: [/sql/02_cte_window.sql](Sql-files/sql:04_ctes_windows.sql)
 
 
-# Visuals (Python)
+## Visuals (Python)
 
-## Figure 1
+### Figure 1
 ![Figure 1](figures/Guest_satisfaction_per_ride_time.png)  
 *Caption for Figure 1*
 
-## Figure 2
+### Figure 2
 ![Figure 2](figures/daily_performance.png)  
 *Caption for Figure 2*
 
-## Figure 3
+### Figure 3
 ![Figure 3](figures/guest_value_and_their_state.png)  
 *Caption for Figure 3*
 
-# Insights & Recommendations
+## Insights & Recommendations
+### Attendance & Revenue Patterns
+- The opening day (2 guests) had no spend data, but likely the least productive.
+- Peak revenue day: 2025-07-07 – $1,138 from 10 visits
+- Productivity metric (spend_per_visit) reveals that some days with fewer visits generated similar or higher revenue: 2025-07-06 has 188 revenue per visits(7).
+### Guest Demographics & Revenue
+- Top revenue states:
+  1. California
+  2. New York
+- Lowest revenue state: Texas (14% of total revenue)
+- Top guest: Ivy (guest_id 9) – 8 visits, $1,030 revenue (18% of total revenue), higher than TX or FL taken individually
+- Marketing opt-in: Only Ava among the top 3 high-value guests has opted in, raising marketing efficiency questions
+
 
 ## For GM
 <!-- Recommendations for General Management -->
