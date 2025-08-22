@@ -66,15 +66,15 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 # Visuals (Python)
 
 ## Figure 1
-![Figure 1](figures/figure1.png)  
+![Figure 1](figures/Guest_satisfaction_per_ride_time.png)  
 *Caption for Figure 1*
 
 ## Figure 2
-![Figure 2](figures/figure2.png)  
+![Figure 2](figures/daily_performance.png)  
 *Caption for Figure 2*
 
 ## Figure 3
-![Figure 3](figures/figure3.png)  
+![Figure 3](figures/guest_value_and_their_state.png)  
 *Caption for Figure 3*
 
 # Insights & Recommendations
