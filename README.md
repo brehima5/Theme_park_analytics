@@ -1,7 +1,7 @@
 # Theme_park_analytics by Thierno Barry
 
 ## Business Problem
-Over the past two quarters, Supernova Theme Park has seen uneven guest satisfaction scores and fluctuating revenue. Guest experience data collected during the summer season reveals recurring issues: long and inconsistent wait times, ride availability challenges, and overcrowding during peak hours — all of which reduce guest satisfaction.
+Over the past two quarters, Supernova Theme Park has seen uneven guest satisfaction scores and fluctuating revenue. Guest experience data collected during the summer season reveals recurring issues: long and inconsistent wait times and overcrowding during peak hours — all of which reduce guest satisfaction.
 
 At the same time, there are open questions around guest behavior: how frequently they visit, how recently, and what drives their in-park spending. The Park General Manager and the Marketing team need clear patterns to guide decisions — such as which ticket types, party sizes, purchase categories, ride times, or attraction states most strongly influence guest spending and satisfaction.
 
