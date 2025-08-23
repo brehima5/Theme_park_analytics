@@ -137,7 +137,7 @@ The initial database had several issues that we handled and clean to make it rea
 
 ## Repo Navigation
 #### /sql
-<!-- SQL scripts -->
+[My Folder]()
 
 #### /notebooks
 <!-- Jupyter notebooks -->
