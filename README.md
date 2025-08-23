@@ -1,11 +1,12 @@
-# Theme_park_analytics by Thierno Barry
+# Theme_park_analytics 
+**Owner:** Thierno Barry
 
 ## Business Problem
 Over the past two quarters, Supernova Theme Park has seen uneven guest satisfaction scores and fluctuating revenue. Guest experience data collected during the summer season reveals recurring issues: long and inconsistent wait times and overcrowding during peak hours — all of which reduce guest satisfaction.
 
 At the same time, there are open questions around guest behavior: how frequently they visit, how recently, and what drives their in-park spending. The Park General Manager and the Marketing team need clear patterns to guide decisions — such as which ticket types, party sizes, purchase categories, ride times, or attraction states most strongly influence guest spending and satisfaction.
 
-Given all the issues listed above and stakeholders' preoccupation, the central question becomes:
+Given all the issues listed above and stakeholders' preoccupation, the central question becomes: \
 ❓ How do operational efficiency and ticketing strategies work together to shape guest satisfaction, guest value, and ultimately park revenue?
 
 ## Stakeholders
@@ -18,7 +19,7 @@ Operations Director (staffing & queues), Marketing Director (promos & ticket mix
 
 ## Overview of Database & Schema 
 ### Star Schema Explanation
-This database uses a **star schema** design, with central **fact tables** (`fact_visits`, `fact_ride_events`, `fact_purchases`) linked to **dimension tables** (`dim_guest`, `dim_ticket`, `dim_attraction`) via foreign keys.  
+This database uses a **star schema** design, with central **fact tables** (`fact_visits`, `fact_ride_events`, `fact_purchases`) linked to **dimension tables** (`dim_guest`, `dim_ticket`, `dim_attraction`) via foreign keys. a **star schema** is a data modeling system for storing data using central fact tables that contains quantitative measurement surrounding by multiple dimension tables providing descriptive context.
 
 **Benefits of this schema:**  
 - Simplifies analytics by separating **measures** (spend, revenue, wait times) from **descriptors** (guest details, ticket type, attraction info).  
@@ -28,6 +29,16 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 
 ### Tables Overview
 <img width="943" height="712" alt="Screenshot 2025-08-21 at 12 49 47 PM" src="https://github.com/user-attachments/assets/7d91ff07-d9b0-4007-8bc5-b9b3595f50d3" />
+
+the database contains 3 fact tables interconnected, and linked to 3 dimensions tables via foreign keys
+- `dim_attraction` linked to   `fact_ride_event` via *attraction_id*
+- `fact_visits` linked to 
+- 1. `dim_guest` via *guest_id*
+- 2. `dim_ticket` via *ticket_type_id*
+- 3. `fact_ride_event` via *visit_id*
+- 4. `dim_date` via *date_id*
+- 5. `fact_purchase` via *visit_id*
+
 
 ## Exploratory Data Analysis (SQL)
 
