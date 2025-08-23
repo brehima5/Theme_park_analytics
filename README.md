@@ -137,13 +137,13 @@ The initial database had several issues that we handled and clean to make it rea
 
 ## Repo Navigation
 #### /sql
-[My Folder]()
+[Sql](Sql-files)
 
 #### /notebooks
 <!-- Jupyter notebooks -->
 
 #### /figures
-<!-- Saved figures/images -->
+[figures](figures)
 
 #### /data
 <!-- Raw or processed datasets -->
