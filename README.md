@@ -60,6 +60,17 @@ the database contains 3 fact tables interconnected, and linked to 3 dimensions t
 
 4. **ride_frame (time of the ride: morning, afternoon, evening, night):** Time of day influences guest behavior and operational needs. Analyzing rides across time frames reveals peak periods, demand patterns, and opportunities for scheduling staff or offering targeted promotions.
 
+### Reflections Prompts
+
+1. Why would the GM or Ops care about `stay_minutes`?
+Stay_minutes help Ops and GMs understand guest satisfaction, waiting time, and attraction capacity. Longer stays may mean more spending but also require careful pricing, staffing, and layout planning.  
+2. Why is `spend_per_person` useful to Marketing vs. raw spend?
+Spend_per_person shows how much each individual contributes, unlike raw spend which hides group size effects. This lets marketing target high-value guests with loyalty programs or special offers.  
+3. How might `wait_bucket` guide scheduling or staffing?
+Wait_buckets reveal how long guests typically wait, highlighting problem areas. Ops can use this to adjust staffing and resources during peak times to reduce dissatisfaction.  
+4. Why normalize `promotion_code` before analysis?
+Inconsistent spellings of promotion codes make analysis inaccurate. Normalization ensures all entries for the same promotion are counted together correctly. 
+
 ## CTEs & Window Functions (SQL)
 We used window functions in combination with CTE to uncover trends without collapsing our data.
 We used windows functions such as 
