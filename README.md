@@ -1,4 +1,7 @@
 # Theme_park_analytics 
+
+![ethan-hoover-qcHaE3QEF90-unsplash](https://github.com/user-attachments/assets/982620ab-05e0-4a99-829b-7c74ba21a6e6)
+
 **Owner:** Thierno Barry
 
 ## Business Problem
@@ -156,6 +159,9 @@ The initial database had several issues that we handled and clean to make it rea
 - Missing values:Imputation used to fill in nulls in some columns
   1. amount column in fact_purchase using the average amount per category. see sql\02_cleaning
   2. spending column in fact_visits using the average spend per visit per day
+ 
+
+### **[Google document link](https://docs.google.com/document/d/1y-hh-BZAaFtX_J5oR6qoPz7vEKapZbpvmFWntl4IhSE/edit?tab=t.0)**
 
 ## Repo Navigation
 #### [Sql_files](Sql-files)
