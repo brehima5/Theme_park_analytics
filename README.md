@@ -136,12 +136,8 @@ The initial database had several issues that we handled and clean to make it rea
   2. spending column in fact_visits using the average spend per visit per day
 
 ## Repo Navigation
-#### /sql
-[Sql_files](Sql-files)
-#### /data
-[raw_data](data)
-#### /notebooks
-[notebook_files](notebooks)
-#### /figures
-[figures_png](figures)
+#### [Sql_files](Sql-files)
+####   [raw_data](data)
+####     [notebook_files](notebooks)
+####       [figures_png](figures)
 
