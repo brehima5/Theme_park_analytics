@@ -1,4 +1,7 @@
 # Theme_park_analytics 
+
+![ethan-hoover-qcHaE3QEF90-unsplash](https://github.com/user-attachments/assets/982620ab-05e0-4a99-829b-7c74ba21a6e6)
+
 **Owner:** Thierno Barry
 
 ## Business Problem
@@ -44,8 +47,8 @@ the database contains 3 fact tables interconnected, and linked to 3 dimensions t
 
 ### Key Explorations
 1. **distribution of the waiting minutes across ticket type:** The main idea is to uncover potential factors that lead to guest dissatisfaction. Delay in services or waiting time is  frustrating, By analyzing how waiting times vary across different ticket types, we can identify patterns that highlight where frustrations are most concentrated. This exploration helps guide further investigation and points to opportunities for operational improvements.
-2. **Daily visits and daily spending** Daily performance is an excellent metric that provides a clear view of how well the business is doing. Exploring both daily visits and daily spending help patterns help uncover revenue fluctuations and guest engagement.This analysis not only reveals performance trends but also highlights underperforming days Allowing you to help operationnal team optimize staffing, ressource allocation and better service delivery.
-3. **EDA Guest_behaviour( spending by category or purchasea and by party size):** This analysis takes a marketing-oriented perspective. Guest spending behavior is influenced by multiple factors, such as party size, purchase categories, and ticket types. Understanding these dynamics helps uncover which groups of guests spend more, what they purchase, and under what circumstances. These insights are useful for designing targeted marketing campaigns. This initial exploration is a necessary first step before diving into more advanced behavioral analysis.
+2. **Daily visits and daily spending** Daily performance is an excellent metric that provides a clear view of how well the business is doing. Exploring both daily visits and daily spending help uncover patterns on revenue fluctuations and guest engagement.This analysis not only reveals performance trends but also highlights underperforming days Allowing you to help operationnal team optimize staffing, ressource allocation and better service delivery.
+3. **EDA Guest_behaviour( spending by category of purchase and by party size):** This analysis takes a marketing-oriented perspective. Guest spending behavior is influenced by multiple factors, such as party size, purchase categories, and ticket types. Understanding these dynamics helps uncover which groups of guests spend more, what they purchase, and under what circumstances. These insights are useful for designing targeted marketing campaigns. This initial exploration is a necessary first step before diving into more advanced behavioral analysis.
 
 > SQL queries here: [/sql/01_eda.sql](Sql-files/sql:01_eda.sql)
 
@@ -60,11 +63,22 @@ the database contains 3 fact tables interconnected, and linked to 3 dimensions t
 
 4. **ride_frame (time of the ride: morning, afternoon, evening, night):** Time of day influences guest behavior and operational needs. Analyzing rides across time frames reveals peak periods, demand patterns, and opportunities for scheduling staff or offering targeted promotions.
 
+### Reflections Prompts
+
+1. Why would the GM or Ops care about `stay_minutes`?
+Stay_minutes help Ops and GMs understand guest satisfaction, waiting time, and attraction capacity. Longer stays may mean more spending but also require careful pricing, staffing, and layout planning.  
+2. Why is `spend_per_person` useful to Marketing vs. raw spend?
+Spend_per_person shows how much each individual contributes, unlike raw spend which hides group size effects. This lets marketing target high-value guests with loyalty programs or special offers.  
+3. How might `wait_bucket` guide scheduling or staffing?
+Wait_buckets reveal how long guests typically wait, highlighting problem areas. Ops can use this to adjust staffing and resources during peak times to reduce dissatisfaction.  
+4. Why normalize `promotion_code` before analysis?
+Inconsistent spellings of promotion codes make analysis inaccurate. Normalization ensures all entries for the same promotion are counted together correctly. 
+
 ## CTEs & Window Functions (SQL)
 We used window functions in combination with CTE to uncover trends without collapsing our data.
 We used windows functions such as 
-- Rank to rank high value guests within their homestate\
-- Lag to retrieve to previous spend on the current\
+- Rank to rank high value guests within their homestate
+- Lag to retrieve the previous spend on the current
 - SUM to creating a running total
   
 ### Sample Querie & Snippets
@@ -83,7 +97,7 @@ We used windows functions such as
 
 ### Figure 1
 ![Figure 1](figures/satisfaction_vs_peak_hours.png)  
-*distribution guest satisfaction across ride times vs rides segment over time of day*:\
+*Guest satisfaction distribution across ride times vs rides count per time of day*:\
 this figure shows us how the satisfaction is spread out for each time of the day. the peaks time are clearly afternoon and evening and most ratings tend to be low in afternoons and mornings rides.
 
 ### Figure 2
@@ -116,7 +130,7 @@ We can see that the top 2 high value guest come from California. New York comes 
    1. High-value stable : e.g., Ben, high consistent spending across visits.
    2. High-potential volatile : e.g., Ava, variable spending, spend high on some visits, but 0 on others.
    3. Low-value : e.g., Grace, high visits but low spend.
-- Nearly 60 % of the revenue is generated by visits having having party lower or equal to 2 while 51% of visits have party size greater than 2.
+- Nearly 60 % of the revenue is generated by visits having having party size lower or equal to 2 while 51% of visits have party size greater than 2.
 ### Recommendations
 #### For GM
 <!-- Recommendations for General Management -->
@@ -145,6 +159,9 @@ The initial database had several issues that we handled and clean to make it rea
 - Missing values:Imputation used to fill in nulls in some columns
   1. amount column in fact_purchase using the average amount per category. see sql\02_cleaning
   2. spending column in fact_visits using the average spend per visit per day
+ 
+
+### **[Google document link](https://docs.google.com/document/d/1y-hh-BZAaFtX_J5oR6qoPz7vEKapZbpvmFWntl4IhSE/edit?tab=t.0)**
 
 ## Repo Navigation
 #### [Sql_files](Sql-files)
