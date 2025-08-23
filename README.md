@@ -36,7 +36,7 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 2. **Daily visits and daily spending** Daily performance is an excellent metric that provides a clear view of how well the business is doing. Exploring both daily visits and daily spending help patterns help uncover revenue fluctuations and guest engagement.This analysis not only reveals performance trends but also highlights underperforming days Allowing you to help operationnal team optimize staffing, ressource allocation and better service delivery.
 3. **EDA Guest_behaviour( spending by category or purchasea and by party size):** This analysis takes a marketing-oriented perspective. Guest spending behavior is influenced by multiple factors, such as party size, purchase categories, and ticket types. Understanding these dynamics helps uncover which groups of guests spend more, what they purchase, and under what circumstances. These insights are useful for designing targeted marketing campaigns. This initial exploration is a necessary first step before diving into more advanced behavioral analysis.
 
-> SQL queries can be linked: [/sql/01_eda.sql](Sql-files/sql:01_eda.sql)
+> SQL queries here: [/sql/01_eda.sql](Sql-files/sql:01_eda.sql)
 
 ## Feature Engineering (SQL)
 
@@ -50,7 +50,12 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 4. **ride_frame (time of the ride: morning, afternoon, evening, night):** Time of day influences guest behavior and operational needs. Analyzing rides across time frames reveals peak periods, demand patterns, and opportunities for scheduling staff or offering targeted promotions.
 
 ## CTEs & Window Functions (SQL)
-
+We used window functions in combination with CTE to uncover trends without collapsing our data.
+We used windows functions such as 
+- Rank to rank high value guests within their homestate\
+- Lag to retrieve to previous spend on the current\
+- SUM to creating a running total
+  
 ### Sample Querie & Snippets
 <!-- Include short snippets of key CTE or window function queries -->
 **CTE RFM**\
@@ -66,16 +71,20 @@ This database uses a **star schema** design, with central **fact tables** (`fact
 ## Visuals (Python)
 
 ### Figure 1
-![Figure 1](figures/guest_spending_by_party_size.png)  
-*Caption for Figure 1*
+![Figure 1](figures/satisfaction_vs_peak_hours.png)  
+*distribution guest satisfaction across ride times vs rides segment over time of day*:\
+this figure shows us how the satisfaction is spread out for each time of the day. the peaks time are clearly afternoon and evening and most ratings tend to be low in afternoons and mornings rides.
 
 ### Figure 2
 ![Figure 2](figures/daily_performance.png)  
-*Caption for Figure 2*
+*General daily performance*\
+july 7th account for the highest visits count and the highest revenue. However, July 5th and 6th have almost similar revenues while counting less visits.\
+In terms of productivity, July 6th and 5th are the top 2, followed by the 7th.
 
 ### Figure 3
 ![Figure 3](figures/guest_value_and_their_state.png)  
-*Caption for Figure 3*
+*Ranking guests along with their homestate*\
+We can see that the top 2 high value guest come from California. New York comes next.
 
 ## Insights & Recommendations
 ### Attendance & Revenue Patterns
@@ -125,16 +134,16 @@ The initial database had several issues that we handled and clean to make it rea
 - Missing values:Imputation used to fill in nulls in some columns
   1. amount column in fact_purchase using the average amount per category. see sql\02_cleaning
   2. spending column in fact_visits using the average spend per visit per day
-# Repo Navigation
 
-## /sql
-<!-- SQL scripts -->
+## Repo Navigation
+#### /data
+<!-- Raw or processed datasets -->
+#### /sql
+[Sql](Sql-files)
 
-## /notebooks
+#### /notebooks
 <!-- Jupyter notebooks -->
 
-## /figures
-<!-- Saved figures/images -->
+#### /figures
+[figures](figures)
 
-## /data
-<!-- Raw or processed datasets -->
